@@ -8,7 +8,7 @@ b=input("Posloupnost 2: ")
 
 # převedení hodnot na množiny čísel a ošetření pro případ zadání nebhodných hodnot
 try:
-    if des=="ANO" or des=="ano":
+    if des=="ANO" or des=="ano" or des=="Ano":
         a = set(map(float, a.split()))
         b = set(map(float, b.split()))
     else:
