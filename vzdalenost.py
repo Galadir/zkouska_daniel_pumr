@@ -2,6 +2,8 @@ from math import radians, acos, sin, cos
 
 print("V kilometrech zadejte poloměr referenční koule, na které bude počítána vzdálenost. "
       "\nPokud polomer nezadáte, nebo jej zadáte chybně, bude počítáno s hodnotou 6371,11 km")
+
+# převedení vstupní hodnoty pro poloměr koule na číslo a ošetření pro případ zadání nevhodné hodnoty
 try:
     r=float(input("Poloměr: "))
 except ValueError:
@@ -9,6 +11,7 @@ except ValueError:
 
 print("Je počítáno s průměrem {} km ".format(r))
 
+# zadání souřadnic a jeho ošetření vzhledem k nevhodným hodnotám
 try:
     print("Zadejte ve stupních souřadnice bodů.")
     p1=float(input("Šířka bodu A: "))
@@ -31,9 +34,12 @@ except ValueError:
     print("Některá ze souřadnic nebyla zadána jako platné číslo. Program byl ukončen.")
     exit(2)
 
+# sumarizace zadání
 print("Je počítána vzdálenost mezi bodem A o souřadnicích {}° šířky a {}° délky a bodem B o souřadnicích {}° šířky a {}° délky.".format(p1,l1,p2,l2))
 
+# provedení samotného výpočtu
 x=acos(sin(radians(p1))*sin(radians(p2))+cos(radians(p1))*cos(radians(p2))*cos(radians(l2)-radians(l1)))
 d=x*r
 
+# vytisknutí výsledné hodnoty
 print("Vzdálenost mezi body A a B je {:.3f} km".format(d))
