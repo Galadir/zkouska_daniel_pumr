@@ -35,7 +35,7 @@ except ValueError:
     exit(2)
 
 # sumarizace zadání
-print("Je počítána vzdálenost mezi bodem A o souřadnicích {}° šířky a {}° délky a bodem B o souřadnicích {}° šířky a {}° délky.".format(p1,l1,p2,l2))
+print("Je počítána vzdálenost na kouli o poloměru {} km mezi bodem A o souřadnicích {}° šířky a {}° délky a bodem B o souřadnicích {}° šířky a {}° délky.".format(r,p1,l1,p2,l2))
 
 # provedení samotného výpočtu
 x=acos(sin(radians(p1))*sin(radians(p2))+cos(radians(p1))*cos(radians(p2))*cos(radians(l2)-radians(l1)))
